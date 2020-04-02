@@ -163,66 +163,7 @@ function getCookie(cname) {
 
 <body>
     
-	<div class="container" style="width: 100%">
-
-
 	
-		<div class="col-sm-12" style="">
-		<div class="col-md-2"></div>
-<div class="col-md-8">
-
-          <div class="about" style="display:none;">
-            <h2 class="blog-post-title"><img src="res/dr-convnet-small.png">Chester the AI Radiology Assistant</h2>
-
-            <p>
-		NOT FOR MEDICAL USE. This is a web based (but locally run) prototype system for diagnosing chest X-ray images. 
-		The patient data remains on your computer and all computation occurs in your browser. 
-		The goals of this system are:
-			</p>
-			
-			<ol>
-			<li>Let people play with deep learning tools to know how they work and their limitations.</li>
-			<li>Show the potential of open data (needed to build a public system like this).</li>
-			<li>Create a tool to help teach radiology.</li>
-			<li>Demonstrate a model delivery system that can scale to provide free medical tools to the world.</li>
-			</ol>
-			<br>
-		<center>
-		<iframe style='padding-bottom: 15px;max-width:700px' width="100%" height="470" src='//www.youtube.com/embed/IbkxHKXjaQo?html5=1&showinfo=0&rel=0&autohide=1&theme=light&color=white&hd=1' frameborder='0' allowfullscreen></iframe>
-		</center>
-
-         
-        The system contains three main components: <br>
-        
-        <b>Out Of Distribution error:</b>
-        This is a heatmap showing how the image differs from our training data. 
-        If the heatmap is too bright then the image is very different from our training data and the model will likely not work.
-        We will prevent an image from being processed if it is not similar enough to our training data in order to prevent errors in predictions.
-        <br>
-        
-        <b>Predictive image regions: </b>
-        The brighter each pixel is in the heatmap the more influence it can have on the predictions. 
-        If the color is bright it means that a change in these pixels will change the prediction. 
-        <br>
-        
-        <b>Disease Predictions:</b>
-        A probability indicating how likely the image contains the disease. 50% means the network is not sure. 
-        <br>
-        <br>
-        <b>Technical Report:</b> <a href="https://arxiv.org/abs/1901.11210">https://arxiv.org/abs/1901.11210</a>
-        
-     	
-        
-        
-        <center><a href="javascript:hideAbout();"><button type="button" class="btn btn-warning">hide this</button></a></center>
-          <hr>
-          </div>
-
-
-        </div>
-				
-		</div>
-
 <div class="col-sm-12">
 
 			<div class="alert alert-warning" role="alert" style="width: 100%">
@@ -405,56 +346,6 @@ function testBrowser(){
 }
 </style>
 
-<center>
-
-<span style="" >Made by <br>
-<a href="https://mlmed.org"/><img style="width:200px" src="res/mlmed.png"/></a>
-and
-<a href="https://mila.quebec"/><img style="width:150px" src="res/mila-medical-logo-new-small.png"/></a>
-</span>
-<br>
-<br>
-
-<style type="text/css">
-.tg  {border-collapse:collapse;border-spacing:0;}
-.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
-.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
-.tg .tg-baqh{text-align:center;vertical-align:top}
-.tg .tg-0lax{text-align:left;vertical-align:top}
-</style>
-<table class="tg">
-  <tr>
-    <th class="tg-baqh" colspan="2">System Information</th>
-  </tr>
-  <tr>
-    <td class="tg-0lax">Version</td>
-    <td class="tg-0lax">2.0 (Old versions: <a href="/tools/xray-v1">v1</a>)</td>
-  </tr>
-  <tr>
-    <td class="tg-0lax">Prediction Model</td>
-    <td class="tg-0lax">DenseNet-121 (Input 224x224) chestxnet-45rot15trans15scale4byte</td>
-  </tr>
-  <tr>
-    <td class="tg-0lax">Out of Distribtion Model</td>
-    <td class="tg-0lax">Autoencoder (Input 64x64) ae-chest-savedmodel-64-512</td>
-  </tr>
-  <tr>
-    <td class="tg-0lax">Training data</td>
-    <td class="tg-0lax">NIH Chest-xray14 - Clinical Center, Bethesda, Maryland, USA</td>
-  </tr>
-  <tr>
-    <td class="tg-0lax">Samples</td>
-    <td class="tg-0lax">106,381 training images</td>
-  </tr>
-  <tr>
-    <td class="tg-0lax">Data sent off device</td>
-    <td class="tg-0lax">No</td>
-  </tr>
-</table>
-
-</center>
-
-<a href="https://github.com/mlmed/dl-web-xray/issues" id="chat-link" target="_blank"><i class="glyphicon glyphicon-envelope"></i>Send Feedback</a>
 
 
 </html>
